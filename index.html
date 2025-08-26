@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiệp Chúc Mừng Sinh Nhật Cho An</title>
+    <style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("./image.jpg"); /* đường dẫn ảnh */
+    background-size: cover;   /* ảnh phủ hết màn hình */
+    background-position: center; /* căn giữa */
+    font-family: 'Segoe UI', Arial, sans-serif;
+    overflow: hidden;
+}
+
+        .card {
+            width: 450px;
+            height: 550px;
+            background: rgba(255, 255, 255, 0.35);
+            border-radius: 25px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .card-header {
+            height: 180px;
+            position: relative;
+            overflow: hidden;
+        }
+        .card-header::before {
+            content: '🍕🥐🍔';
+            font-size: 70px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.2;
+            animation: float 4s ease-in-out infinite;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        .neon-text {
+            font-size: 34px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 
+                0 0 5px #fff,
+                0 0 10px #fff,
+                0 0 20px #ff4d4d,
+                0 0 40px #ff4d4d,
+                0 2px 4px rgba(0, 0, 0, 0.4),
+                2px 2px 6px rgba(0, 0, 0, 0.3);
+            margin: 10px 0;
+            animation: glow 1.5s ease-in-out infinite alternate;
+            position: relative;
+            z-index: 1;
+            transform: translateY(-2px);
+        }
+        .card-body p {
+            font-size: 18px;
+            color: #2d3436;
+            line-height: 1.6;
+            text-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
+        }
+        .food-emoji {
+            font-size: 50px;
+            animation: pulse 2s infinite;
+            margin-top: 20px;
+        }
+        @keyframes glow {
+            from {
+                text-shadow: 
+                    0 0 5px #fff,
+                    0 0 10px #fff,
+                    0 0 20px #ff4d4d,
+                    0 0 40px #ff4d4d,
+                    0 2px 4px rgba(0, 0, 0, 0.4),
+                    2px 2px 6px rgba(0, 0, 0, 0.3);
+            }
+            to {
+                text-shadow: 
+                    0 0 10px #fff,
+                    0 0 20px #fff,
+                    0 0 30px #ff4d4d,
+                    0 0 60px #ff4d4d,
+                    0 3px 6px rgba(0, 0, 0, 0.5),
+                    3px 3px 8px rgba(0, 0, 0, 0.4);
+            }
+        }
+        @keyframes float {
+            0%, 100% { transform: translate(-50%, -50%) translateY(0); }
+            50% { transform: translate(-50%, -50%) translateY(-20px); }
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        .footer {
+            position: absolute;
+            bottom: 15px;
+            width: 100%;
+            text-align: center;
+            color: #636e72;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="card-header"></div>
+        <div class="card-body">
+            <h1 class="neon-text">Chúc Mừng Sinh Nhật, Anh An Dzai! 🎉</h1>
+            <p>
+                Chúc anh An một ngày sinh nhật siêu vui vẻ, đầy ắp món ngon như pizza, bánh mì kẹp và bánh ngọt! <br>
+                Thư giãn và tận hưởng ngày đặc biệt này nhé! 😎
+            </p>
+            <div class="food-emoji">🍰</div>
+        </div>
+    </div>
+</body>
+</html>

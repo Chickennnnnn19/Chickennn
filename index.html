@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thiệp Chúc Mừng Sinh Nhật Cho An</title>
     <style>
-body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url("./image.jpg"); /* đường dẫn ảnh */
-    background-size: cover;   /* ảnh phủ hết màn hình */
-    background-position: center; /* căn giữa */
-    font-family: 'Segoe UI', Arial, sans-serif;
-    overflow: hidden;
-}
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url("./image.jpg");
+            background-size: cover;
+            background-position: center;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            overflow: hidden;
+        }
 
         .card {
             width: 450px;
@@ -47,7 +47,12 @@ body {
         }
         .card-body {
             padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
+        
         .neon-text {
             font-size: 34px;
             font-weight: bold;
@@ -63,19 +68,22 @@ body {
             animation: glow 1.5s ease-in-out infinite alternate;
             position: relative;
             z-index: 1;
-            transform: translateY(-2px);
         }
+
         .card-body p {
             font-size: 18px;
             color: #2d3436;
             line-height: 1.6;
             text-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
+            margin: 0;
         }
+
         .food-emoji {
             font-size: 50px;
             animation: pulse 2s infinite;
             margin-top: 20px;
         }
+
         @keyframes glow {
             from {
                 text-shadow: 
@@ -104,14 +112,38 @@ body {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.2); }
         }
-        .footer {
-            position: absolute;
-            bottom: 15px;
-            width: 100%;
-            text-align: center;
-            color: #636e72;
-            font-size: 14px;
-            opacity: 0.8;
+
+        /* --- MEDIA QUERIES cho điện thoại --- */
+        @media (max-width: 600px) {
+            .card {
+                width: 90%; 
+                max-width: 350px; /* Giới hạn chiều rộng tối đa */
+                height: auto; 
+                background: rgba(255, 255, 255, 0.85); 
+                padding: 15px; 
+            }
+
+            .card-header {
+                height: 120px; /* Giảm chiều cao của header trên di động */
+            }
+
+            .card-header::before {
+                font-size: 45px; /* Giảm kích thước icon trên di động */
+                animation: none; /* Tắt animation float trên di động nếu gây khó chịu */
+            }
+
+            .neon-text {
+                font-size: 26px; /* Giảm kích thước font chữ chính */
+            }
+            
+            .card-body p {
+                font-size: 15px; /* Giảm kích thước font chữ mô tả */
+            }
+
+            .food-emoji {
+                font-size: 35px; /* Giảm kích thước emoji chân trang */
+                margin-top: 10px;
+            }
         }
     </style>
 </head>
